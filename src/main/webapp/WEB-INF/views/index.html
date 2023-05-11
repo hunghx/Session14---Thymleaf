@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Đây là trang chủ</h1>
+<p th:text="${welcome}">
+</p>
+<p th:text="'Chào mừng bạn '+ ${name} +' đến với trang web'"></p>
+<p th:text="|Chào mừng bạn ${name} đến với trang web|"></p>
+<span th:object="${user}">
+    <span th:text="*{id}"></span>
+    <span th:text="*{name}"></span>
+</span>
+<br>
+<span th:text="${user.id}"></span>
+<span th:text="${user.name}"></span>
+<!--chuyên huớng trang-->
+<a th:href="@{/list-product}">product</a>
+<div th:insert="/footer::foot"></div>
+<img th:src="@{/image/food2.png}" alt="ff">
+
+</body>
+</html>
